@@ -1,0 +1,6 @@
+{
+  "host": "",
+  "port": 22,
+  "username": "",
+  "privateKey": "./settings/ssh/id_rsa"
+}
