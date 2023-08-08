@@ -1,6 +1,7 @@
 import { readFileSync } from 'fs'
+import appRoot from 'app-root-path';
 
-const pathToSettingsFile = 'settings/servers.json';
+const pathToSettingsFile = `${appRoot}/settings/servers.json`;
 let serverSettings;
 
 export const getServerSettings = () => {

@@ -1,5 +1,5 @@
 import inquirer from 'inquirer';
-import { getServerSettings } from './fileReader.js'
+import { getServerSettings } from '#services/fileReader.js'
 
 export const simpleQuestion = async (question, listOfAnswers) => {
   return (await inquirer.prompt([

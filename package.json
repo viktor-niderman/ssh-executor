@@ -9,8 +9,13 @@
   "author": "niderman",
   "license": "ISC",
   "dependencies": {
+    "app-root-path": "^3.1.0",
     "inquirer": "^9.2.10",
     "ssh2": "^1.14.0"
   },
-  "type": "module"
+  "type": "module",
+  "imports": {
+    "#root/*": "./*",
+    "#services/*": "./src/services/*"
+  }
 }

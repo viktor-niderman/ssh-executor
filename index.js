@@ -1,5 +1,5 @@
-import { selectServer, simpleQuestion } from './src/services/console.js'
-import ServerConnect from './src/classes/ServerConnect.js'
+import { selectServer, simpleQuestion } from '#services/console.js'
+import ServerConnect from '#services/ServerConnect.js'
 
 async function main() {
   const serverData = await selectServer();
