@@ -19,7 +19,7 @@ export default class ServerConnect {
     });
   }
 
-  async executeCommand(command) {
+  async #executeCommand(command) {
     return new Promise((resolve, reject) => {
       this.conn.exec(command, (err, stream) => {
         if (err) {
@@ -41,7 +41,7 @@ export default class ServerConnect {
   }
 
   async execute(command) {
-    const result = await this.executeCommand(command);
+    const result = await this.#executeCommand(command);
     if (result.stdout) {
       console.log(result.stdout);
     }
