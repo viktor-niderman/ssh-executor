@@ -1,4 +1,4 @@
-import { selectServer } from './src/services/console.js'
+import { selectServer, simpleQuestion } from './src/services/console.js'
 import ServerConnect from './src/classes/ServerConnect.js'
 
 async function main() {
@@ -6,7 +6,9 @@ async function main() {
   const server = new ServerConnect(serverData.connectData);
   try {
     await server.connect();
-    await server.execute('cd /var/www/ && ls');
+    const command = await simpleQuestion("Select Command", serverData.commands)
+
+    await server.execute(command);
   } catch (err) {
     console.error('Error:', err);
   } finally {

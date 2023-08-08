@@ -1,7 +1,7 @@
 import inquirer from 'inquirer';
 import { getServerSettings } from './fileReader.js'
 
-async function simpleQuestion(question, listOfAnswers) {
+export const simpleQuestion = async (question, listOfAnswers) => {
   return (await inquirer.prompt([
     {
       type: 'list',
