@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "app-root-path": "^3.1.0",
+    "chalk": "^5.3.0",
     "inquirer": "^9.2.10",
     "ssh2": "^1.14.0"
   },

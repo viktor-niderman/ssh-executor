@@ -1,5 +1,6 @@
 import inquirer from 'inquirer';
 import { getServerSettings } from '#services/fileReader.js'
+import chalk from 'chalk';
 
 export const simpleQuestion = async (question, listOfAnswers) => {
   return (await inquirer.prompt([
@@ -24,6 +25,6 @@ export const selectServer = async () => {
     Object.keys(settings[server])
   ) : Object.keys(settings[server])[0];
 
-  console.log(`You selected: ${server} | ${environment}`)
+  console.log(chalk.green.bold(`You selected: ${server} | ${environment}`))
   return settings[server][environment];
 }

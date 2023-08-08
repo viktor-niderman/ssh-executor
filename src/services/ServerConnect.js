@@ -1,9 +1,11 @@
 import { Client } from 'ssh2'
 import { readFileSync } from 'fs'
+import chalk from 'chalk'
+import appRoot from 'app-root-path';
 
 export default class ServerConnect {
   constructor(connectData) {
-    connectData.privateKey = readFileSync(connectData.privateKey)
+    connectData.privateKey = readFileSync(`${appRoot}/${connectData.privateKey}`)
     this.connectData = connectData;
     this.conn = new Client();
   }
@@ -43,10 +45,10 @@ export default class ServerConnect {
   async execute(command) {
     const result = await this.#executeCommand(command);
     if (result.stdout) {
-      console.log(result.stdout);
+      console.log('Server answer:\n' + chalk.white.bgBlack(result.stdout));
     }
     if (result.stderr) {
-      console.log('STDERR:', result.stderr);
+      console.log('Server error:\n' + chalk.red.bgWhite(result.stderr));
     }
   }
 
