@@ -12,6 +12,15 @@ export const simpleQuestion = async (question, listOfAnswers) => {
     }
   ])).answer;
 }
+export const promptQuestion = async (question) => {
+  return (await inquirer.prompt([
+    {
+      type: 'input',
+      name: 'answer',
+      message: question,
+    }
+  ])).answer;
+}
 export const selectServer = async () => {
   let settings = getServerSettings();
 
@@ -27,4 +36,15 @@ export const selectServer = async () => {
 
   console.log(chalk.green.bold(`You selected: ${server} | ${environment}`))
   return settings[server][environment];
+}
+
+export const selectCommand = async (commandsList) => {
+  let suggest = 'Enter your own command';
+  let command = await simpleQuestion("Select Command",
+    [...commandsList, suggest]
+  );
+  if (command === suggest) {
+    command = await promptQuestion('Your command: ');
+  }
+  return command;
 }
