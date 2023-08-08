@@ -1,6 +1,12 @@
 {
-  "host": "",
-  "port": 22,
-  "username": "",
-  "privateKey": "./settings/ssh/id_rsa"
+  "My Server": {
+    "Production": {
+      "connectData": {
+        "host": "",
+        "port": 22,
+        "username": "",
+        "privateKey": "./settings/ssh/id_rsa"
+      }
+    }
+  }
 }

@@ -9,6 +9,8 @@
   "author": "niderman",
   "license": "ISC",
   "dependencies": {
+    "inquirer": "^9.2.10",
     "ssh2": "^1.14.0"
-  }
+  },
+  "type": "module"
 }
