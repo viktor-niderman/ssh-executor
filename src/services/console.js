@@ -24,5 +24,6 @@ export const selectServer = async () => {
     Object.keys(settings[server])
   ) : Object.keys(settings[server])[0];
 
+  console.log(`You selected: ${server} | ${environment}`)
   return settings[server][environment];
 }
