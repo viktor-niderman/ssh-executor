@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "npx tsc && node dist/index.js",
+    "exe": "node dist/index.js"
   },
   "author": "niderman",
   "license": "ISC",
@@ -14,9 +15,16 @@
     "inquirer": "^9.2.10",
     "ssh2": "^1.14.0"
   },
-  "type": "module",
   "imports": {
     "#root/*": "./*",
     "#services/*": "./src/services/*"
-  }
+  },
+  "devDependencies": {
+    "@types/inquirer": "^9.0.3",
+    "@types/node": "^20.4.9",
+    "@types/ssh2": "^1.11.13",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.1.6"
+  },
+  "type": "module"
 }

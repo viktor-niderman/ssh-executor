@@ -2,7 +2,7 @@ import {
   selectCommand,
   selectServer,
 } from '#services/console.js'
-import ServerConnect from '#services/ServerConnect.js'
+import ServerConnect from '#services/ServerConnectService.ts'
 
 async function main() {
   const serverData = await selectServer();
