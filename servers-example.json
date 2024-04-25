@@ -5,7 +5,7 @@
         "host": "",
         "port": 22,
         "username": "",
-        "privateKey": "./settings/ssh/id_rsa"
+        "privateKeyPath": "./settings/ssh/id_rsa"
       },
       "commands": [
         "df -h"

@@ -13,8 +13,6 @@ async function main() {
     await server.execute(command);
   } catch (err) {
     console.error('Error:', err);
-  } finally {
-    await server.disconnect();
   }
 }
 main();
